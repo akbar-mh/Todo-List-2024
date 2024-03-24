@@ -1,10 +1,10 @@
+/* General styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 
 :root {
     --bg: #151c2c;
@@ -13,7 +13,7 @@
     --textSoft: #b7bac1;
     --borderColor: #2e374a;
     --btn: #008080;
-    /*   --btn: #36d39a; */
+    /* --btn: #36d39a; */
     --worning: #fbbe23;
     --error: #ec4b4b;
 }
@@ -23,8 +23,13 @@ body {
 }
 
 main {
-    width: 850px;
+    width: 90%;
+    /* Adjusted width for responsiveness */
+    max-width: 850px;
+    /* Maximum width */
     margin: 0 auto;
+    padding: 10px;
+    /* Added padding */
 }
 
 main>h1 {
@@ -32,67 +37,95 @@ main>h1 {
     padding: 20px;
     color: var(--text);
     font-weight: bold;
-
 }
 
+/* Top Box styles */
 .topBox {
-     width: 100%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
+    /* Adjusted gap */
     background-color: var(--bgSoft);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 2px 2px var(--borderColor);
+}
+
+.topBox {
+    width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 30px;
+   background-color: var(--bgSoft);
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0px 0px 2px 2px var(--borderColor);
 
 }
 
 .topBox>section {
-    width: 100%;
-   
+   width: 100%;
+  
 }
 .boxInp{
-    display: flex;
-     align-items: center;
+   display: flex;
+    align-items: center;
 }
 .topBox>.boxInp>div:first-child{
-    width: 100%;
-    border: 1px solid red;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+   width: 100%;
+  
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
 }
 .topBox>.boxInp>div>input {
-    width: 49%;
-    padding: 10px;
-    border: none;
-    outline: none;
-    background-color: none;
-    background-color: var(--bg);
-    border-radius: 5px;
-    color: var(--text);
-    font-weight: bold;
-    border: 1px solid var(--btn);
+   width: 49%;
+   padding: 10px;
+   border: none;
+   outline: none;
+   background-color: none;
+   background-color: var(--bg);
+   border-radius: 5px;
+   color: var(--text);
+   font-weight: bold;
+   border: 1px solid var(--btn);
 }
 
 .topBox>.boxInp>div>button {
-    background-color: var(--btn);
-    padding: 8px;
-    border-radius: 5px;
-    color: var(--text);
-    font-weight: 600;
-    border: none;
+   background-color: var(--btn);
+   padding: 8px;
+   border-radius: 5px;
+   color: var(--text);
+   font-weight: 600;
+   border: none;
+ 
 
 
 }
-
+/* Category styles */
 .topBox>.category {
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
+.category>button {
+    background-color: var(--error);
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--text);
+    font-weight: 700;
+    border: none;
+    height: 30px;
+}
 
+/* .topBox>.category>span {
+    display: flex;
+    justify-content: space-around;
+} */
 
 .topBox>.category>span>button {
     background-color: var(--btn);
@@ -103,20 +136,9 @@ main>h1 {
     border: none;
 }
 
-
-.topBox>.category>button {
-    background-color: var(--error);
-    padding: 10px;
-    border-radius: 5px;
-    color: var(--text);
-    font-weight: 700;
-    border: none;
-}
-
-
-/* start Style for table */
+/* Table styles */
 .table {
-    width:100%;
+    width: 100%;
     margin: 0 auto;
     margin-top: 5px;
     display: flex;
@@ -124,7 +146,6 @@ main>h1 {
     gap: 30px;
     border: 1px solid var(--borderColor);
     border-radius: 10px;
-
 }
 
 table {
@@ -132,7 +153,6 @@ table {
     border-color: var(--borderColor);
     color: var(--text);
 }
-
 thead {
     background-color: var(--bgSoft);
 
@@ -187,42 +207,81 @@ tbody td{
 .table>table>tbody>tr>td>button:last-child {
     background-color: var(--error);
 }
-
-
+/* Alert styles */
 #alert_message {
-
     display: flex;
     align-items: center;
     width: 100%;
     height: 40px;
     margin-top: 10px;
-   
-   /*  width: max-content; */
-  
     color: var(--text);
-    
-   
-      
 }
 
-.alert{
-  
-  
+.alert {
     width: 100%;
     text-align: center;
-     padding: 5px;
+    padding: 5px;
     border-radius: 5px;
 }
 
-.alert-success{
+.alert-success {
     background-color: #0fb60f;
 }
-.alert-error{
+
+.alert-error {
     background-color: var(--error);
 }
 
- .editBtn {
+/* Edit button */
+.editBtn {
     display: none;
- }
+}
 
+/* Responsive styles for mobile */
+@media (max-width: 767px) {
+    main {
+        padding: 5px;
+        /* Adjusted padding for mobile */
+    }
 
+    .topBox {
+        padding: 15px;
+        /* Adjusted padding for mobile */
+    }
+
+    .boxInp>div {
+        flex-direction: column;
+        /* Stacked elements vertically on mobile */
+    }
+    .topBox>.boxInp>div>input{
+        width: 100%;
+        margin-top: 8px;
+    }
+    .category>button {
+        background-color: var(--error);
+        padding: 10px;
+        border-radius: 5px;
+        color: var(--text);
+        font-weight: 700;
+        border: none;
+    }
+    
+    .topBox>.category>span>button {
+        width: 100%;
+        /* Full width for buttons on mobile */
+        margin-bottom: 10px;
+        /* Added margin for separation on mobile */
+    }
+
+    tbody td {
+        width: 100%;
+        /* Full width for table cells on mobile */
+    }
+    .topBox>.boxInp>div>button {
+      
+        margin-top: 8px;
+     
+     
+     }
+   
+}
